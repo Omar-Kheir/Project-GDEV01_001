@@ -30,4 +30,8 @@ This project covers the following topics:
 3. **Open the Project in Godot** – Launch **Godot**, click **'Import'**, and select the extracted project folder.
 4. **Run the Game** – Press ▶️ in the Godot editor to start testing!
 
+---
+
+## 🕒 Estimated Project Completion Time (in class)
+This project took approximately 32 Class Hours to complete.
 
