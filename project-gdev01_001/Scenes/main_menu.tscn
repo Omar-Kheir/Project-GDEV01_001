@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bug475sofca1x"]
+[gd_scene load_steps=9 format=3 uid="uid://bug475sofca1x"]
 
 [ext_resource type="Texture2D" uid="uid://sopk8vitqq6v" path="res://Assets/UI/BG.png" id="1_lwjdl"]
 [ext_resource type="Texture2D" uid="uid://ckulg7j4ulqed" path="res://Assets/UI/playBtn.png" id="2_spbr5"]
+[ext_resource type="Script" path="res://Scripts/play_button.gd" id="3_pjr1p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qvclx"]
 font_size = 50
@@ -96,3 +97,6 @@ shortcut = SubResource("Shortcut_2ufa7")
 text = "Play"
 icon = ExtResource("2_spbr5")
 expand_icon = true
+script = ExtResource("3_pjr1p")
+
+[connection signal="pressed" from="Panel/PlayButton" to="Panel/PlayButton" method="_on_pressed"]
