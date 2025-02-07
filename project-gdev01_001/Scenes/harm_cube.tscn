@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dow6c5lrteapt"]
+
+[ext_resource type="Material" uid="uid://274daknbh0aw" path="res://Assets/Materials/harmCubeMaterial.tres" id="1_buh1i"]
+[ext_resource type="Script" path="res://Scripts/harm_cube.gd" id="2_p67m7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5a3jp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k0hej"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m43tc"]
+
+[node name="HarmCube" type="StaticBody3D"]
+
+[node name="CubeMesh" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_buh1i")
+mesh = SubResource("BoxMesh_5a3jp")
+
+[node name="CubeCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_k0hej")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_p67m7")
+
+[node name="AreaCollision" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0, 0)
+shape = SubResource("BoxShape3D_m43tc")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://clsmxc5h1quw2"]
+
+[ext_resource type="Material" uid="uid://bvhfslnsgiyg5" path="res://Assets/Materials/levelFinsihMaterial.tres" id="1_ucinm"]
+[ext_resource type="Script" path="res://Scripts/level_finish.gd" id="2_l0t2v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_k48m6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_topf0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_waapr"]
+
+[node name="LevelFinish" type="StaticBody3D"]
+
+[node name="CubeMesh" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_ucinm")
+mesh = SubResource("BoxMesh_k48m6")
+
+[node name="CubeCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_topf0")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_l0t2v")
+
+[node name="AreaCollision" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0, 0)
+shape = SubResource("BoxShape3D_waapr")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

@@ -1,0 +1,782 @@
+[gd_scene load_steps=9 format=3 uid="uid://bs338qwhekcjx"]
+
+[ext_resource type="Script" path="res://Scripts/level_manager_3.gd" id="1_6m3xt"]
+[ext_resource type="PackedScene" uid="uid://lwwvcxlrmsea" path="res://Scenes/cube.tscn" id="1_d4eu0"]
+[ext_resource type="PackedScene" uid="uid://dow6c5lrteapt" path="res://Scenes/harm_cube.tscn" id="2_0wcg0"]
+[ext_resource type="PackedScene" uid="uid://b5utq14myuu6g" path="res://Scenes/player.tscn" id="3_vyul6"]
+[ext_resource type="PackedScene" uid="uid://clsmxc5h1quw2" path="res://Scenes/level_finish.tscn" id="4_64oqo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jhj1p"]
+sky_horizon_color = Color(0.705955, 0.756597, 0.787454, 1)
+ground_bottom_color = Color(0.43882, 0.572388, 0.599814, 1)
+ground_horizon_color = Color(0.705955, 0.756597, 0.787454, 1)
+
+[sub_resource type="Sky" id="Sky_5nbj6"]
+sky_material = SubResource("ProceduralSkyMaterial_jhj1p")
+
+[sub_resource type="Environment" id="Environment_lc3c5"]
+background_mode = 2
+sky = SubResource("Sky_5nbj6")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_6m3xt")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lc3c5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="main_terrain" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Floor" type="Node3D" parent="main_terrain"]
+
+[node name="Cube" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+
+[node name="Cube2" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Cube3" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Cube4" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="Cube5" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Cube6" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="Cube7" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="Cube8" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Cube9" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="Cube10" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Cube11" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Cube12" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Cube13" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="Cube14" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+
+[node name="Cube15" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
+
+[node name="Cube16" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+
+[node name="Cube17" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1)
+
+[node name="Cube18" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+
+[node name="Cube19" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3)
+
+[node name="Cube20" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3)
+
+[node name="Cube21" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -3)
+
+[node name="Cube22" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="Cube23" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -2)
+
+[node name="Cube24" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
+
+[node name="Cube25" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
+[node name="Cube26" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -4)
+
+[node name="Cube27" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4)
+
+[node name="Cube28" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="Cube29" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="Cube30" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
+
+[node name="Cube31" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="Cube32" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Cube33" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
+
+[node name="Cube34" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4)
+
+[node name="Cube35" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Cube36" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4)
+
+[node name="Cube37" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)
+
+[node name="Cube38" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
+
+[node name="Cube39" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -3)
+
+[node name="Cube40" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+
+[node name="Cube41" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
+
+[node name="Cube42" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="Cube43" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
+
+[node name="Cube44" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
+
+[node name="Cube45" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="Cube109" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -6)
+
+[node name="Cube110" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -6)
+
+[node name="Cube111" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
+
+[node name="Cube112" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -5)
+
+[node name="Cube113" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5)
+
+[node name="Cube114" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5)
+
+[node name="Cube115" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -7)
+
+[node name="Cube116" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -7)
+
+[node name="Cube117" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -7)
+
+[node name="Cube118" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Cube119" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -6)
+
+[node name="Cube120" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -6)
+
+[node name="Cube121" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -5)
+
+[node name="Cube122" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Cube123" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5)
+
+[node name="Cube124" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7)
+
+[node name="Cube125" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="Cube126" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -7)
+
+[node name="Cube127" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -6)
+
+[node name="Cube128" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
+
+[node name="Cube129" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
+
+[node name="Cube130" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5)
+
+[node name="Cube131" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -5)
+
+[node name="Cube132" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -5)
+
+[node name="Cube133" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -7)
+
+[node name="Cube134" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -7)
+
+[node name="Cube135" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -7)
+
+[node name="Cube46" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="Cube47" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Cube48" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="Cube49" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 1)
+
+[node name="Cube50" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1)
+
+[node name="Cube51" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="Cube52" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+
+[node name="Cube53" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1)
+
+[node name="Cube54" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
+
+[node name="Cube55" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="Cube56" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+
+[node name="Cube57" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
+
+[node name="Cube58" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="Cube59" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 4)
+
+[node name="Cube60" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+
+[node name="Cube61" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="Cube62" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 2)
+
+[node name="Cube63" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
+
+[node name="Cube64" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Cube65" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="Cube66" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="Cube67" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 4)
+
+[node name="Cube68" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Cube69" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+
+[node name="Cube70" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="Cube71" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Cube72" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="Cube73" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+
+[node name="Cube74" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="Cube75" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="Cube76" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="Cube77" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
+
+[node name="Cube78" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="Cube79" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="Cube80" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+
+[node name="Cube81" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="Cube82" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 6)
+
+[node name="Cube83" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+
+[node name="Cube84" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+
+[node name="Cube85" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7)
+
+[node name="Cube86" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 7)
+
+[node name="Cube87" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7)
+
+[node name="Cube88" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5)
+
+[node name="Cube89" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+
+[node name="Cube90" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
+
+[node name="Cube91" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="Cube92" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+
+[node name="Cube93" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 6)
+
+[node name="Cube94" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 7)
+
+[node name="Cube95" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+
+[node name="Cube96" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 7)
+
+[node name="Cube97" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+
+[node name="Cube98" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Cube99" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5)
+
+[node name="Cube100" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 6)
+
+[node name="Cube101" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6)
+
+[node name="Cube102" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 6)
+
+[node name="Cube103" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 7)
+
+[node name="Cube104" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 7)
+
+[node name="Cube105" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 7)
+
+[node name="Cube106" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
+
+[node name="Cube107" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 5)
+
+[node name="Cube108" parent="main_terrain/Floor" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 5)
+
+[node name="walls" type="Node3D" parent="main_terrain"]
+
+[node name="Cube136" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
+
+[node name="Cube137" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 1)
+
+[node name="Cube138" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -1)
+
+[node name="Cube139" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -3)
+
+[node name="Cube140" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -2)
+
+[node name="Cube141" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -4)
+
+[node name="Cube142" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -6)
+
+[node name="Cube143" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -5)
+
+[node name="Cube144" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -7)
+
+[node name="Cube145" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 3)
+
+[node name="Cube146" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 4)
+
+[node name="Cube147" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 2)
+
+[node name="Cube148" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 6)
+
+[node name="Cube149" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 7)
+
+[node name="Cube150" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 5)
+
+[node name="Cube151" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
+
+[node name="Cube152" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 1)
+
+[node name="Cube153" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -1)
+
+[node name="Cube154" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -3)
+
+[node name="Cube155" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -2)
+
+[node name="Cube156" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -4)
+
+[node name="Cube157" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -6)
+
+[node name="Cube158" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -5)
+
+[node name="Cube159" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -7)
+
+[node name="Cube160" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 3)
+
+[node name="Cube161" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 4)
+
+[node name="Cube162" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 2)
+
+[node name="Cube163" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 6)
+
+[node name="Cube164" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 7)
+
+[node name="Cube165" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 5)
+
+[node name="Cube166" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 0)
+
+[node name="Cube167" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 1)
+
+[node name="Cube168" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -1)
+
+[node name="Cube169" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -3)
+
+[node name="Cube170" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -2)
+
+[node name="Cube171" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -4)
+
+[node name="Cube172" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -6)
+
+[node name="Cube173" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -5)
+
+[node name="Cube174" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -7)
+
+[node name="Cube175" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 3)
+
+[node name="Cube176" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 4)
+
+[node name="Cube177" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 2)
+
+[node name="Cube178" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 6)
+
+[node name="Cube179" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 7)
+
+[node name="Cube180" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 5)
+
+[node name="Cube181" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 0)
+
+[node name="Cube182" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 1)
+
+[node name="Cube183" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -1)
+
+[node name="Cube184" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -3)
+
+[node name="Cube185" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -2)
+
+[node name="Cube186" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -4)
+
+[node name="Cube187" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -6)
+
+[node name="Cube188" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -5)
+
+[node name="Cube189" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -7)
+
+[node name="Cube190" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 3)
+
+[node name="Cube191" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 4)
+
+[node name="Cube192" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 2)
+
+[node name="Cube193" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 6)
+
+[node name="Cube194" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 7)
+
+[node name="Cube195" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 5)
+
+[node name="Cube196" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 7)
+
+[node name="Cube197" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 7)
+
+[node name="Cube198" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 7)
+
+[node name="Cube199" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7)
+
+[node name="Cube200" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 7)
+
+[node name="Cube201" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 7)
+
+[node name="Cube202" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 7)
+
+[node name="Cube203" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 7)
+
+[node name="Cube204" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 7)
+
+[node name="Cube205" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, 7)
+
+[node name="Cube206" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 7)
+
+[node name="Cube207" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 7)
+
+[node name="Cube208" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, 7)
+
+[node name="Cube209" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 7)
+
+[node name="Cube210" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -7)
+
+[node name="Cube211" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -7)
+
+[node name="Cube212" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -7)
+
+[node name="Cube213" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -7)
+
+[node name="Cube214" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -7)
+
+[node name="Cube215" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -7)
+
+[node name="Cube216" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -7)
+
+[node name="Cube217" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -7)
+
+[node name="Cube218" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -7)
+
+[node name="Cube219" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -7)
+
+[node name="Cube220" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -7)
+
+[node name="Cube221" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -7)
+
+[node name="Cube222" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -7)
+
+[node name="Cube223" parent="main_terrain/walls" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -7)
+
+[node name="obstacles" type="Node3D" parent="."]
+
+[node name="Cube" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+
+[node name="Cube2" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
+
+[node name="Cube3" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
+
+[node name="Cube4" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 2)
+
+[node name="Cube15" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 2)
+
+[node name="Cube16" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -3)
+
+[node name="Cube17" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 0)
+
+[node name="Cube5" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 3)
+
+[node name="Cube6" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -2)
+
+[node name="Cube7" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -3)
+
+[node name="Cube8" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -2)
+
+[node name="Cube9" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -2)
+
+[node name="Cube10" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -2)
+
+[node name="Cube11" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
+
+[node name="Cube12" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+
+[node name="Cube13" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 2)
+
+[node name="Cube14" parent="obstacles" instance=ExtResource("1_d4eu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 3)
+
+[node name="harm_cubes" type="Node3D" parent="."]
+
+[node name="HarmCube" parent="harm_cubes" instance=ExtResource("2_0wcg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -1)
+
+[node name="HarmCube2" parent="harm_cubes" instance=ExtResource("2_0wcg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2)
+
+[node name="HarmCube3" parent="harm_cubes" instance=ExtResource("2_0wcg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+
+[node name="HarmCube4" parent="harm_cubes" instance=ExtResource("2_0wcg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 2)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 10, 5)
+
+[node name="Player" parent="." instance=ExtResource("3_vyul6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0)
+
+[node name="LevelFinish" parent="." instance=ExtResource("4_64oqo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)

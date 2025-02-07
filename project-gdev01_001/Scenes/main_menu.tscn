@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://bug475sofca1x"]
+
+[ext_resource type="Texture2D" uid="uid://sopk8vitqq6v" path="res://Assets/UI/BG.png" id="1_lwjdl"]
+[ext_resource type="Texture2D" uid="uid://ckulg7j4ulqed" path="res://Assets/UI/playBtn.png" id="2_spbr5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qvclx"]
+font_size = 50
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_8dip0"]
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4ruf"]
+bg_color = Color(0.929412, 0.839216, 0.458824, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 1
+
+[sub_resource type="InputEventKey" id="InputEventKey_ius8s"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_2ufa7"]
+events = [SubResource("InputEventKey_ius8s")]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lwjdl")
+
+[node name="Titile" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.303
+anchor_right = 0.5
+anchor_bottom = 0.303
+offset_left = -218.5
+offset_top = -70.344
+offset_right = 218.5
+offset_bottom = 70.656
+grow_horizontal = 2
+grow_vertical = 2
+text = "Gamedev Campus
+Project 01"
+label_settings = SubResource("LabelSettings_qvclx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.559
+anchor_right = 0.5
+anchor_bottom = 0.559
+offset_left = -158.0
+offset_top = -38.232
+offset_right = 158.0
+offset_bottom = 38.768
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 8
+theme_override_constants/h_separation = -210
+theme_override_constants/icon_max_width = 60
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_fonts/font = SubResource("SystemFont_8dip0")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_v4ruf")
+shortcut = SubResource("Shortcut_2ufa7")
+text = "Play"
+icon = ExtResource("2_spbr5")
+expand_icon = true

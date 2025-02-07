@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://yfxkxjyupqbk"]
+
+[ext_resource type="Texture2D" uid="uid://sopk8vitqq6v" path="res://Assets/UI/BG.png" id="1_jok2y"]
+[ext_resource type="Texture2D" uid="uid://dsb53k5ujbndj" path="res://Assets/UI/restoreBtn.png" id="2_org85"]
+[ext_resource type="Script" path="res://Scripts/retry_button.gd" id="3_yewkm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aivoh"]
+font_size = 50
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wun8"]
+bg_color = Color(0.909804, 0.909804, 0.372549, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jok2y")
+
+[node name="Title" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.348
+anchor_right = 0.5
+anchor_bottom = 0.348
+offset_left = -135.5
+offset_top = -34.504
+offset_right = 135.5
+offset_bottom = 34.496
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_aivoh")
+
+[node name="RetryButton" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -28.0
+offset_right = 91.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/icon_max_width = 50
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_8wun8")
+text = "Retry"
+icon = ExtResource("2_org85")
+expand_icon = true
+script = ExtResource("3_yewkm")
+
+[connection signal="pressed" from="Background/RetryButton" to="Background/RetryButton" method="_on_pressed"]
